@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Banner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="/img/logo neo blanco.png" alt="">
+    </div>
+    <nav>
+      <a href="#">Servicios</a>
+      <a href="#">Proyectos</a>
+      <a href="#">Contacto</a>
+      <a href="#">¿Quienes somos?</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg-bottom">
+    <div class="scroll-text">
+      <span>MARKETING</span>
+      <span>SEO</span>
+      <span>BRANDING</span>
+      <span>DESARROLLO WEB</span>
+      <span>FOTOGRAFÍA</span>
+      <span>WEBSITES</span>
+    </div>
+  </div>
+  <div class="hero-content">
+
+    <div class="hero-left">
+      <h1>
+        <span id="typewriter"></span>
+      </h1>
+
+      <p>
+        Soluciones digitales y visuales para hacer crecer tu negocio.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-primary">Agendar cita</button>
+        <button class="btn-outline">Ver Portfolio</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+
+
+      <img class="hero-camera" src="camara.png" alt="camara">
+
+    </div>
+
+  </div>
+</section>
+
+<section class="showcase">
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item">
+      <h3>2000+</h3>
+      <p>Company</p>
+    </div>
+    <div class="stat-item">
+      <h3>10+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat-item">
+      <h3>800+</h3>
+      <p>Happy Client</p>
+    </div>
+    <div class="stat-item">
+      <h3>150M+</h3>
+      <p>Total Revenue</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- PRODUCTS SWITCH -->
+<section class="products">
+
+  <!-- HEADER + SWITCH -->
+  <div class="products-header">
+    <h2>Nuestros productos</h2>
+
+    <div class="products-switch">
+      <button class="switch-btn active" data-target="digital">
+        Digitales
+      </button>
+      <button class="switch-btn" data-target="fisicos">
+        Físicos
+      </button>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR DESLIZABLE -->
+  <div class="products-wrapper">
+
+    <!-- DIGITAL -->
+    <div class="products-panel active" id="digital">
+      <div class="digital-grid">
+
+        <div class="digital-card">
+          <h3>Gestión de redes sociales</h3>
+          <p>Creación de contenido, programación y análisis de métricas.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Publicidad digital (Ads)</h3>
+          <p>Campañas en Google Ads, Meta Ads, TikTok Ads, etc.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Fotografía de producto</h3>
+          <p>Desarrollo de imagen para productos de marca.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Videos corporativos</h3>
+          <p>Presentación de videos de historia de distintos giros empresariales.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>SEO y SEM</h3>
+          <p>Optimización de páginas web y posicionamiento en buscadores.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Email marketing</h3>
+          <p>Diseño de newsletters, automatización y segmentación de audiencias.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Branding digital</h3>
+          <p>Desarrollo de identidad visual y narrativa de marca en entornos online.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Marketing de contenidos</h3>
+          <p>Blogs, artículos, videos y podcasts para atraer clientes.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Analítica y reportes</h3>
+          <p>Dashboards personalizados con KPIs y ROI.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Diseño web y UX/UI</h3>
+          <p>Páginas optimizadas para conversión y experiencia de usuario.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Influencer marketing</h3>
+          <p>Gestión de colaboraciones con creadores de contenido.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Consultoría estratégica</h3>
+          <p>Planes de marketing digital adaptados a cada negocio.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Programas de fidelización</h3>
+          <p>Planes y programas de incentivos para los clientes de la empresa.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Sistemas ERP</h3>
+          <p>Gestiona invetarios, crea resportes.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FISICOS -->
+    <div class="products-panel" id="fisicos">
+      <div class="digital-grid">
+
+        <div class="digital-card">
+          <h3>Logotipos e identidad visual</h3>
+          <p>Creación de marcas, isotipos, imagotipos y manuales de identidad.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Papelería corporativa</h3>
+          <p>Tarjetas de presentación, hojas membretadas, sobres, carpetas.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Material publicitario impreso</h3>
+          <p>Flyers, trípticos, dípticos, posters, banners, lonas.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Diseño editorial</h3>
+          <p>Revistas, catálogos, libros, portadas.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Packaging y etiquetas</h3>
+          <p>Diseño de envases, cajas, bolsas, etiquetas de productos.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Merchandising personalizado</h3>
+          <p>Pines, llaveros, playeras, tazas, stickers.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Diseño digital</h3>
+          <p>Plantillas para redes sociales, anuncios online, presentaciones.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Infografías y diagramas</h3>
+          <p>Piezas visuales para explicar procesos o datos.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Ilustraciones personalizadas</h3>
+          <p>Arte digital, caricaturas, retratos.</p>
+        </div>
+
+        <div class="digital-card">
+          <h3>Señalética y rotulación</h3>
+          <p>Letreros, vinilos decorativos, señalización para espacios físicos.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<script src="script.js"></script>
+<script>
+  const buttons = document.querySelectorAll(".switch-btn");
+  const panels = document.querySelectorAll(".products-panel");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // quitar active a botones
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // ocultar panels
+      panels.forEach(p => p.classList.remove("active"));
+
+      // mostrar panel correcto
+      document
+        .getElementById(btn.dataset.target)
+        .classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
