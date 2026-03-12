@@ -70,10 +70,10 @@ body{
 .hero-slider{
   position: absolute;
 
-  right: -500px;   /* la empuja fuera del hero */
+  right: -200px;   /* la empuja fuera del hero */
   bottom: 300px;
 
-  width: 900px;    /* imagen más grande */
+  width: 600px;    /* imagen más grande */
 }
 
 .slide{
@@ -134,9 +134,11 @@ body{
 
 /* HERO BUTTONS */
 
+
+
 .hero-buttons{
   display:flex;
-  gap:15px;
+  justify-content:center;
 }
 
 .btn-primary{
@@ -171,8 +173,9 @@ body{
   overflow: visible;
 }
 
+
 .hero-right img{
-  width:600px;
+  width:100%;
   border-radius:20px;
 }
 
@@ -518,15 +521,6 @@ body{
 
 @media (max-width:768px){
 
-.hero{
-  overflow:hidden;
-}
-
-.hero-content{
-  flex-direction:column;
-  text-align:center;
-}
-
 .hero-right{
   width:100%;
   height:340px;
@@ -534,12 +528,12 @@ body{
 }
 
 .hero-slider{
-  width:420px;
+  width:500px;
 
   left:50%;
-  transform:translateX(-100%);
+  transform:translateX(-80%);
 
-  top:40px;   /* esto la sube correctamente */
+  top:40px;
 
   right:auto;
   bottom:auto;
