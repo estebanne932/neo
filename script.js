@@ -60,3 +60,15 @@ setInterval(() => {
   slides[index].classList.add("active");
 
 }, 3500);
+
+document.querySelectorAll(".card-header").forEach(header => {
+
+  header.addEventListener("click", () => {
+
+    const card = header.parentElement;
+
+    card.classList.toggle("active");
+
+  });
+
+});

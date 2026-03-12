@@ -561,4 +561,48 @@ body{
     grid-template-columns:1fr;
   }
 
+}.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.icon{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* estado normal */
+.card-content{
+  margin-top:10px;
+}
+
+/* SOLO EN MOVIL */
+@media (max-width:768px){
+
+  .digital-grid{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .digital-card{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    background:white;
+  }
+
+  .card-content{
+    max-height:0;
+    overflow:hidden;
+    transition:all .3s ease;
+  }
+
+  .digital-card.active .card-content{
+    max-height:200px;
+    margin-top:10px;
+  }
+
 }
