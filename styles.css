@@ -606,3 +606,130 @@ body{
   }
 
 }
+
+/* =========================
+   PHOTOGRAPHY SECTION
+========================= */
+
+.photography-section{
+  position:relative;
+  overflow:hidden;
+}
+
+/* fondo de imagen */
+
+.photo-bg{
+  position:absolute;
+  inset:0;
+
+  background-image:url("img/fondo.jpeg");
+  background-size:cover;
+  background-position:center;
+
+  filter:brightness(.4);
+
+  z-index:0;
+}
+
+.letrero-bg{
+  position:absolute;
+  inset:0;
+
+  background-image:url("img/065bdb8c-0186-4b1a-bb06-8b427255d684.jpg.jpeg");
+  background-size:cover;
+  background-position:center;
+
+  filter:brightness(.4);
+
+  z-index:0;
+}
+
+.logo-bg{
+   position:absolute;
+  inset:0;
+
+  background-color: #000;
+}
+/* contenido arriba del fondo */
+
+.photography-section .products-header{
+  position:relative;
+  z-index:2;
+  color:white;
+}
+
+/* =========================
+   GALERIA
+========================= */
+
+.photo-gallery{
+  position:relative;
+  z-index:2;
+  margin-top:30px;
+  overflow-x:auto;
+  padding-bottom:10px;
+
+  scrollbar-width:none;
+}
+
+.photo-gallery::-webkit-scrollbar{
+  display:none;
+}
+
+.gallery-track{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  width:max-content;
+  padding:10px 0;
+}
+
+/* imagenes */
+
+.gallery-track img{
+  width:280px;
+  height:360px;
+  object-fit:cover;
+
+  border-radius:18px;
+
+  transition:.35s;
+  cursor:pointer;
+}
+
+.gallery-track img:hover{
+  transform:scale(1.05);
+}
+
+.card-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.floating-btn{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+
+  padding: 14px 22px;
+  border-radius: 40px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.floating-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}

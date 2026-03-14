@@ -86,7 +86,7 @@
 </section>
 
 <!-- PRODUCTS SWITCH -->
-<section class="products">
+<section class="products" id="products">
 
   <!-- HEADER + SWITCH -->
   <div class="products-header">
@@ -132,7 +132,8 @@
           
         </div>
 
-        <div class="digital-card">
+        <a href="#fotografia" class="card-link">
+          <div class="digital-card">
           <div class="card-header">
             <h3>Fotografía de producto</h3>
             <span class="icon">+</span>
@@ -141,8 +142,9 @@
           <div class="card-content">
             <p>Desarrollo de imagen para productos de marca.</p>
           </div>
-          
         </div>
+        </a>
+        
 
         <div class="digital-card">
           <div class="card-header">
@@ -272,19 +274,23 @@
     <div class="products-panel" id="fisicos">
       <div class="digital-grid">
 
-        <div class="digital-card">
+        <a href="#logotipos" class="card-link">
+          <div class="digital-card">
           <div class="card-header">
             <h3>Logotipos e identidad visual</h3>
             <span class="icon">+</span>
           </div>
 
-          <div class="card-content">
-            <p>Creación de marcas, isotipos, imagotipos y manuales de identidad.</p>
+            <div class="card-content">
+              <p>Creación de marcas, isotipos, imagotipos y manuales de identidad.</p>
+            </div>
           </div>
+        </a>
           
-        </div>
-
-        <div class="digital-card">
+        
+        
+        <a href="#documentos" class="card-link">
+          <div class="digital-card">
           <div class="card-header">
             <h3>Papelería corporativa</h3>
             <span class="icon">+</span>
@@ -294,6 +300,8 @@
             <p>Tarjetas de presentación, hojas membretadas, sobres, carpetas.</p>
           </div>
         </div>
+        </a>
+        
 
         <div class="digital-card">
           <div class="card-header">
@@ -372,7 +380,8 @@
           </div>
         </div>
 
-        <div class="digital-card">
+        <a href="#letrero" class="card-link">
+          <div class="digital-card">
           <div class="card-header">
             <h3>Señalética y rotulación</h3>
             <span class="icon">+</span>
@@ -382,11 +391,95 @@
             <p>Letreros, vinilos decorativos, señalización para espacios físicos.</p>
           </div>
         </div>
+        </a>
+        
 
       </div>
     </div>
 
   </div>
+</section>
+
+
+<!--FOTOGRAFIA-->
+<section id="fotografia" class="products photography-section">
+
+  <!-- FONDO -->
+  <div class="photo-bg"></div>
+
+  <div class="products-header">
+    <h2>Fotografía de producto</h2>
+  </div>
+
+  <!-- GALERIA -->
+  <div class="photo-gallery">
+
+      <div class="gallery-track">
+
+          <img src="img/foto.jpeg" alt="">
+          <img src="img/foto1.png" alt="">
+          <img src="img/foto2.jpeg" alt="">
+          <img src="img/foto3.jpeg" alt="">
+
+      </div>
+
+  </div>
+
+</section>
+
+<!-- LOGOTIPOS-->
+<section id="logotipos" class="products photography-section">
+
+  <!-- FONDO -->
+  <div class="logo-bg"></div>
+
+  <div class="products-header">
+  </div>
+
+  <!-- GALERIA -->
+  <div class="photo-gallery">
+
+      <div class="gallery-track">
+
+          <img src="img/logotipos.png" alt="">
+
+      </div>
+
+  </div>
+
+</section>
+
+<!--letreros-->
+<section id="letrero" class="products photography-section">
+
+  <!-- FONDO -->
+  <div class="letrero-bg"></div>
+
+  <div class="products-header">
+  </div>
+
+  <!-- GALERIA -->
+  <div class="photo-gallery">
+
+      <div class="gallery-track">
+
+          <img src="img/065bdb8c-0186-4b1a-bb06-8b427255d684.jpg.jpeg" alt="">
+          <img src="img/0f538b66-8eb0-4b95-a859-447c04849bfb.jpg.jpeg" alt="">
+          <img src="img/19c3f7a0-ac49-42e2-aae7-78ef4bbf3647.jpg.jpeg" alt="">
+          <img src="img/34c6da78-4ee0-4c17-b8e4-904db51468b9.jpg.jpeg" alt="">
+
+          <img src="img/9f91a001-a8ee-4929-a8ef-3235c8d68659.jpg.jpeg" alt="">
+          <img src="img/a2e383af-78f2-43d2-baba-2da89d36dc37.jpg.jpeg" alt="">
+          <img src="img/b64e7f34-67cd-414e-8643-cdc5894c3ad3.jpg.jpeg" alt="">
+          <img src="img/e82b6b0e-ba2b-462a-b3bf-f70eb8da0845.jpg.jpeg" alt="">
+
+          <img src="img/eb0a8390-fd92-479e-b21e-4d6696aa5e89.jpg.jpeg" alt="">
+          <img src="img/ec42d623-5eff-45ed-8bc8-a190033903a1.jpg.jpeg" alt="">
+
+      </div>
+
+  </div>
+
 </section>
 
 
@@ -411,5 +504,9 @@
     });
   });
 </script>
+
+<a href="#products" class="floating-btn">
+  Ver productos
+</a>
 </body>
 </html>
