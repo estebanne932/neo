@@ -183,12 +183,14 @@ function getSuffix(el){
         const cContent = c.querySelector(".card-content");
         if(cContent){
           cContent.style.maxHeight = null;
+          cContent.style.opacity = "0"; // 🔥 clave
         }
       });
 
       if(!isOpen){
         card.classList.add("active");
         content.style.maxHeight = content.scrollHeight + "px";
+        content.style.opacity = "1"; // 🔥 clave
       }
 
     });
