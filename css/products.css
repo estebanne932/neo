@@ -1,0 +1,125 @@
+.products{
+  width:90%;
+  margin:60px auto;
+  background:#fff;
+  padding:50px 40px;
+  border-radius:30px;
+}
+
+.products-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.products-switch{
+  display:inline-flex;
+  background:#f1f1f1;
+  padding:6px;
+  border-radius:999px;
+  gap:6px;
+}
+
+.switch-btn{
+  border:none;
+  padding:10px 22px;
+  border-radius:999px;
+  background:transparent;
+  cursor:pointer;
+  font-weight:600;
+  color:#666;
+   transition: all 0.3s ease;
+}
+
+.switch-btn.active{
+  background:#39ff14;
+  color:#000;
+}
+
+
+.switch-btn:hover{
+  color:#000;
+}
+
+
+
+/* GRID */
+
+.digital-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+}
+
+.digital-card{
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+
+
+.digital-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.digital-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at top left, rgba(57,255,20,0.15), transparent 60%);
+  opacity:0;
+  transition: opacity 0.3s;
+}
+
+.digital-card:hover::before{
+  opacity:1;
+}
+
+
+.digital-card.show{
+  opacity:1;
+  transform: translateY(0);
+}
+/* CARDS */
+
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.card-content{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.digital-card.active .card-content{
+  max-height: 200px;
+  opacity: 1;
+}
+
+.products-panel{
+  display: none;
+}
+
+.products-panel.active{
+  display: block;
+}
+
+.icon{
+  transition: transform 0.3s ease;
+}
+
+.digital-card.active .icon{
+  transform: rotate(45deg);
+}

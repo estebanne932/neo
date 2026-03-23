@@ -1,0 +1,238 @@
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* 👈 importante */
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1), transparent 40%),
+              linear-gradient(135deg, #ffffff, #ffffff);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+
+  display: flex;              /* 🔥 CLAVE */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Content */
+.hero-content {
+  max-width: 600px;
+  margin-top: 60px; /* 👈 ahora sí se va a notar */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(90deg, #95C11F, #cfff4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  line-height: 1.6;
+  
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 🔥 esto la empuja a la derecha */
+}
+
+.hero-image img {
+  width: 90%;
+  max-width: 500px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateX(120px);
+}
+
+.hero-image img.fade {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #95C11F, #b7e33a);
+  color: #0a0f1c;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(149, 193, 31, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(149, 193, 31, 0.5);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Background Effects */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.blur-circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(149,193,31,0.35), transparent 70%);
+  filter: blur(120px);
+  top: -100px;
+  right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blur-circle.small {
+  width: 300px;
+  height: 300px;
+  top: 60%;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    text-align: left;
+    padding: 60px 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.typing {
+  background: linear-gradient(90deg, #95C11F, #cfff4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-right: 2px solid rgba(149,193,31,0.7);
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column; /* 🔥 vertical */
+    align-items: flex-start;
+  }
+
+   .hero-image {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+    transform: none; /* 👈 quitamos el desplazamiento */
+  }
+
+   .hero-content {
+    margin-top: 0;
+    transform: none;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* 👈 importante */
+  }
+
+  .btn {
+    width: 80%;
+    max-width: 280px;
+    margin: 0 auto; /* 🔥 esto lo centra sí o sí */
+    display: block;
+    text-align: center;
+  }
+
+   .hero {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+
+}

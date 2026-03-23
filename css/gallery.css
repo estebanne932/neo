@@ -1,0 +1,52 @@
+.photography-section{
+  position:relative;
+}
+
+.photo-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("../img/fondo.jpeg");
+  background-size:cover;
+  filter:brightness(.4);
+}
+
+.letrero-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("../img/065bdb8c-0186.jpg.jpeg");
+  background-size:cover;
+  filter:brightness(.4);
+}
+
+.logo-bg{
+  position:absolute;
+  inset:0;
+  background:#000;
+}
+
+.photo-gallery{
+  margin-top:30px;
+  overflow-x:auto;
+}
+
+.gallery-track{
+  display:flex;
+  gap:20px;
+}
+
+.gallery-track img{
+  width:280px;
+  height:360px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.floating-btn{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #000;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 40px;
+}

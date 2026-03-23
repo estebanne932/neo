@@ -1,0 +1,39 @@
+.showcase{
+  width:90%;
+  margin:40px auto;
+
+  overflow: hidden; /* 👈 esto corta el desborde */
+}
+
+.stats{
+  background:#111;
+  color:white;
+  border-radius:20px;
+  padding:25px;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  margin-bottom:50px;
+}
+
+.stat-item h3{
+  color:#39ff14;
+  font-size:28px;
+}
+
+.stat-item p{
+  font-size:13px;
+  color:#ccc;
+}
+
+.stat-item {
+  text-align: center;
+  opacity: 0; /* 🔥 faltaba esto */
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.stat-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
