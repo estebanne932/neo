@@ -1,9 +1,10 @@
 function initScripts(){
 
-  console.log("SCRIPT INICIADO"); // debug
+  console.log("SCRIPT INICIADO");
 
-
+  // =========================
   // BOTÓN HERO
+  // =========================
   const btn = document.querySelector(".btn.primary");
 
   if(btn){
@@ -13,7 +14,9 @@ function initScripts(){
   }
 
 
-  // TYPEWRITER (SEGURO)
+  // =========================
+  // TYPEWRITER + IMAGEN
+  // =========================
   const element = document.querySelector(".typing");
 
   if(element){
@@ -72,7 +75,9 @@ function initScripts(){
   }
 
 
+  // =========================
   // SLIDER
+  // =========================
   const slides = document.querySelectorAll(".slide");
 
   if(slides.length){
@@ -89,118 +94,91 @@ function initScripts(){
     }, 3500);
   }
 
-  // 🔥 ANIMACIÓN CARDS
-const cards = document.querySelectorAll(".digital-card");
 
-function showCards(){
-  cards.forEach((card, index) => {
-    const rect = card.getBoundingClientRect();
+  // =========================
+  // 🔥 ANIMACIÓN CARDS (NUEVO)
+  // =========================
+  const cards = document.querySelectorAll(".pricing-card");
 
-    if(rect.top < window.innerHeight - 80){
-      setTimeout(() => {
-        card.classList.add("show");
-      }, index * 100);
-    }
-  });
-}
+  function showCards(){
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
 
-window.addEventListener("scroll", showCards);
-showCards();
-
-// 🔥 SHOWCASE STATS
-const stats = document.querySelectorAll(".stat-item");
-
-function animateStats(){
-
-  stats.forEach((stat, index) => {
-
-    const rect = stat.getBoundingClientRect();
-
-    if(rect.top < window.innerHeight - 80){
-
-      setTimeout(() => {
-        stat.classList.add("show");
-      }, index * 150);
-
-      const number = stat.querySelector("h3");
-
-      if(number && !number.classList.contains("counted")){
-
-        number.classList.add("counted");
-
-        const target = parseInt(number.getAttribute("data-target")) || 0;
-
-        let count = 0;
-        const increment = target / 100;
-
-        function updateCount(){
-          count += increment;
-
-          if(count < target){
-            number.textContent = Math.floor(count) + getSuffix(number);
-            requestAnimationFrame(updateCount);
-          } else {
-            number.textContent = target + getSuffix(number);
-          }
-        }
-
-        updateCount();
+      if(rect.top < window.innerHeight - 100){
+        setTimeout(() => {
+          card.classList.add("show");
+        }, index * 150);
       }
+    });
+  }
 
-    }
-
-  });
-
-}
-
-window.addEventListener("scroll", animateStats);
-animateStats();
+  window.addEventListener("scroll", showCards);
+  showCards();
 
 
-function getSuffix(el){
-  if(el.textContent.includes("k")) return "k";
-  if(el.textContent.includes("+")) return "+";
-  return "";
-}
+  // =========================
+  // 🔥 SHOWCASE (CONTADOR)
+  // =========================
+  const stats = document.querySelectorAll(".stat-item");
 
+  function animateStats(){
 
-  // 🔥 CARDS (ULTRA SEGURAS)
-  document.querySelectorAll(".card-header").forEach(header => {
+    stats.forEach((stat, index) => {
 
-    header.addEventListener("click", () => {
+      const rect = stat.getBoundingClientRect();
 
-      const card = header.closest(".digital-card");
-      if(!card) return;
+      if(rect.top < window.innerHeight - 80){
 
-      const content = card.querySelector(".card-content");
-      if(!content) return;
+        setTimeout(() => {
+          stat.classList.add("show");
+        }, index * 150);
 
-      const isOpen = card.classList.contains("active");
+        const number = stat.querySelector("h3");
 
-      document.querySelectorAll(".digital-card").forEach(c => {
-        c.classList.remove("active");
+        if(number && !number.classList.contains("counted")){
 
-        const cContent = c.querySelector(".card-content");
-        if(cContent){
-          cContent.style.maxHeight = null;
-          cContent.style.opacity = "0"; // 🔥 clave
+          number.classList.add("counted");
+
+          const target = parseInt(number.getAttribute("data-target")) || 0;
+
+          let count = 0;
+          const increment = target / 100;
+
+          function updateCount(){
+            count += increment;
+
+            if(count < target){
+              number.textContent = Math.floor(count) + getSuffix(number);
+              requestAnimationFrame(updateCount);
+            } else {
+              number.textContent = target + getSuffix(number);
+            }
+          }
+
+          updateCount();
         }
-      });
 
-      if(!isOpen){
-        card.classList.add("active");
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.style.opacity = "1"; // 🔥 clave
       }
 
     });
 
-  });
+  }
+
+  window.addEventListener("scroll", animateStats);
+  animateStats();
+
+  function getSuffix(el){
+    if(el.textContent.includes("k")) return "k";
+    if(el.textContent.includes("+")) return "+";
+    return "";
+  }
 
 
-  // SWITCH PRODUCTOS
+  // =========================
+  // SWITCH PRODUCTOS (TABS)
+  // =========================
   const buttons = document.querySelectorAll(".switch-btn");
-  const panels = document.querySelectorAll(".products-panel");
+  const panels = document.querySelectorAll(".pricing-panel");
 
   buttons.forEach(btn => {
 
@@ -221,7 +199,9 @@ function getSuffix(el){
   });
 
 
+  // =========================
   // TEXTO CURVO
+  // =========================
   const textPath = document.getElementById("textPath");
 
   if(textPath){
@@ -246,7 +226,9 @@ function getSuffix(el){
 }
 
 
+// =========================
 // HERO ENTRY
+// =========================
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector(".hero-content");
 
@@ -259,5 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// =========================
 // INIT
+// =========================
 document.addEventListener("DOMContentLoaded", initScripts);
