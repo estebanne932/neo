@@ -1,0 +1,31 @@
+.navbar{
+  background:#000;
+  padding:15px 0;
+  border-radius:40px;
+  width:90%;
+  margin:20px auto;
+}
+
+.nav-container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo img{
+  width:50px;
+}
+
+.navbar nav a{
+  color:#ccc;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+  transition:.3s;
+}
+
+.navbar nav a:hover{
+  color:#39ff14;
+}
