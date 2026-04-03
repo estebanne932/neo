@@ -1,30 +1,32 @@
-function initScripts(){
+window.initScripts = function(){
 
   console.log("SCRIPT INICIADO");
 
   // =========================
   // BOTÓN HERO
   // =========================
-  const btn = document.querySelector(".btn.primary");
+  const btnHero = document.querySelector(".btn.primary");
 
-  if(btn){
-    btn.addEventListener("click", () => {
+  if(btnHero){
+    btnHero.addEventListener("click", () => {
       alert("¡Vamos a empezar tu proyecto!");
     });
   }
 
 
   // =========================
-  // TYPEWRITER + IMAGEN
+  // TYPEWRITER
   // =========================
   const element = document.querySelector(".typing");
 
   if(element){
 
     const words = [
-      { text: "MARKETING", img: "img/rotulo.png" },
-      { text: "FOTOGRAFÍA", img: "img/camara.png" },
-      { text: "SOLUCIONES WEB", img: "img/letrero.png" }
+      { text: "IMPRESIONES", img: "img/impresiones.png" },
+      { text: "ROTULACIÓN", img: "img/rotulo.png" },
+      { text: "LETREROS LUMINOSOS", img: "img/letrero.png" },
+      { text: "REDES SOCIALES", img: "img/socialmedia.png"},
+      { text: "SOLUCIONES WEB", img: "img/web.png"}
     ];
 
     let i = 0;
@@ -80,46 +82,25 @@ function initScripts(){
   // =========================
   const slides = document.querySelectorAll(".slide");
 
-  if(slides.length){
+  if(slides.length > 0){
     let index = 0;
 
     setInterval(() => {
       slides[index].classList.remove("active");
 
-      index++;
-      if(index >= slides.length) index = 0;
+      index = (index + 1) % slides.length;
 
       slides[index].classList.add("active");
 
     }, 3500);
   }
 
-
   // =========================
-  // 🔥 ANIMACIÓN CARDS (NUEVO)
-  // =========================
-  const cards = document.querySelectorAll(".pricing-card");
+// STATS (CONTADOR)
+// =========================
+const stats = document.querySelectorAll(".stat-item");
 
-  function showCards(){
-    cards.forEach((card, index) => {
-      const rect = card.getBoundingClientRect();
-
-      if(rect.top < window.innerHeight - 100){
-        setTimeout(() => {
-          card.classList.add("show");
-        }, index * 150);
-      }
-    });
-  }
-
-  window.addEventListener("scroll", showCards);
-  showCards();
-
-
-  // =========================
-  // 🔥 SHOWCASE (CONTADOR)
-  // =========================
-  const stats = document.querySelectorAll(".stat-item");
+if(stats.length > 0){
 
   function animateStats(){
 
@@ -129,6 +110,7 @@ function initScripts(){
 
       if(rect.top < window.innerHeight - 80){
 
+        // animación de entrada
         setTimeout(() => {
           stat.classList.add("show");
         }, index * 150);
@@ -172,76 +154,59 @@ function initScripts(){
     if(el.textContent.includes("+")) return "+";
     return "";
   }
+}
+
+  // =========================
+  // ANIMACIÓN CARDS
+  // =========================
+  const cards = document.querySelectorAll(".pricing-card");
+
+  if(cards.length > 0){
+
+    function showCards(){
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+
+        if(rect.top < window.innerHeight - 100){
+          setTimeout(() => {
+            card.classList.add("show");
+          }, index * 120);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", showCards);
+    showCards();
+  }
 
 
   // =========================
-  // SWITCH PRODUCTOS (TABS)
+  // SWITCH PRODUCTOS
   // =========================
   const buttons = document.querySelectorAll(".switch-btn");
   const panels = document.querySelectorAll(".pricing-panel");
 
-  buttons.forEach(btn => {
+  if(buttons.length > 0 && panels.length > 0){
 
-    btn.addEventListener("click", () => {
+    buttons.forEach(button => {
 
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+      button.addEventListener("click", () => {
 
-      panels.forEach(p => p.classList.remove("active"));
+        buttons.forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
 
-      const target = document.getElementById(btn.dataset.target);
-      if(target){
-        target.classList.add("active");
-      }
+        panels.forEach(p => p.classList.remove("active"));
+
+        const target = document.getElementById(button.dataset.target);
+
+        if(target){
+          target.classList.add("active");
+        }
+
+      });
 
     });
 
-  });
-
-
-  // =========================
-  // TEXTO CURVO
-  // =========================
-  const textPath = document.getElementById("textPath");
-
-  if(textPath){
-
-    let start = null;
-
-    function animateText(timestamp){
-
-      if(!start) start = timestamp;
-
-      let progress = (timestamp - start) * 0.01;
-      let offset = progress % 100;
-
-      textPath.setAttribute("startOffset", offset + "%");
-
-      requestAnimationFrame(animateText);
-    }
-
-    requestAnimationFrame(animateText);
   }
 
-}
-
-
-// =========================
-// HERO ENTRY
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  const content = document.querySelector(".hero-content");
-
-  if(content){
-    setTimeout(() => {
-      content.style.opacity = "1";
-      content.style.transform = "translateY(0)";
-    }, 200);
-  }
-});
-
-
-// =========================
-// INIT
-// =========================
-document.addEventListener("DOMContentLoaded", initScripts);
+};
